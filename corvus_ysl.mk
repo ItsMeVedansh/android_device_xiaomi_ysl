@@ -27,17 +27,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 # Inherit from mido device
 $(call inherit-product, device/xiaomi/ysl/device.mk)
 
-# Inherit some common ssos stuff.
-$(call inherit-product, vendor/ssos/config/common.mk)
+# Inherit some common Corvus stuff.
+$(call inherit-product, vendor/corvus/config/common.mk)
 
-# Inherit some common ssos flags
-SSOS_BUILD_TYPE := OFFICIAL
+# Inherit some common Corvus flags
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_BOOT_ANIMATION_RES := 720
 
+# Corvus Maintainer
+PRODUCT_PROPERTY_OVERRIDES += \ 
+ro.corvus.maintainer=ItsMeVedansh
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := ysl
-PRODUCT_NAME := ssos_ysl
+PRODUCT_NAME := corvus_ysl
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi S2
